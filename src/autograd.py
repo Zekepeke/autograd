@@ -46,9 +46,20 @@ class Node:
 
         return out
     def __pow__(self, other):
-        other = self.wrap(other)
-        return Node(self.data ** other.data, (self, other), '**')
-    def __truediv__(self, other):
+        # Supporting integers and float values
+        assert isinstance(other, (int, float)) 
+        
+        out = Node(self.data**other, (self,), f'pow of {other}')
+        
+        '''
+        Find the chainrule for the value that is raised
+        to the power of other, where other could be any number (ex: -1)
+        where the power is to the power of some constant
+        '''
+        def back_prop():
+            self.grad += 0 # TODO THE BACK PROP FOR THE POWER 
+        out._backward = back_prop
+    def __truediv__(self, other):        
         other = self.wrap(other)
         return Node(self.data / other.data, (self, other), '/')
     def __sub__(self, other): 
