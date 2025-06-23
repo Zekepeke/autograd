@@ -56,7 +56,6 @@ class Node:
     def __pow__(self, other):
         # Supporting integers and float values
         assert isinstance(other, (int, float))
-
         out = Node(self.data**other, (self,), f'pow of {other}')
 
         '''
