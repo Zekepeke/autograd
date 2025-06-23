@@ -1,11 +1,11 @@
-# 🧮 Autograd
+# Autograd
 
 A minimal, scalar-valued automatic differentiation engine written in Python.  
 This project implements a custom `Node` class to build and backpropagate through mathematical expressions, much like PyTorch's autograd — but from scratch and educationally.
 
 ---
 
-## 📚 Overview
+## Overview
 
 `Autograd` allows you to:
 
@@ -16,7 +16,7 @@ This project implements a custom `Node` class to build and backpropagate through
 
 ---
 
-## 📦 Features
+## Features
 
 - Operator overloading for expressions: `+`, `-`, `*`, `/`, `**`
 - Activation functions: `ReLU`, `tanh`
@@ -25,7 +25,7 @@ This project implements a custom `Node` class to build and backpropagate through
 
 ---
 
-## 🔧 How It Works
+## How It Works
 
 ### `Node` Class
 
@@ -56,7 +56,7 @@ Each node stores a `_backward()` function — its own piece of the **chain rule*
 
 ---
 
-## ✅ Example
+## Example
 
 ```python
 from src.autograd import Node
